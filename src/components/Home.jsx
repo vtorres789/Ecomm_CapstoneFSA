@@ -11,6 +11,12 @@ export default function Home() {
     return (
       <div className="home">
         <h1>World Soccer MegaShop Plus</h1>
+        <div className="products">
+          <div className="product">Item</div>
+          <div className="product">Item</div>
+          <div className="product">Item</div>
+          <div className="product">Item</div>
+        </div>
       </div>
     );
   }
