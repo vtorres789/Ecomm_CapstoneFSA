@@ -1,22 +1,49 @@
-import { useEffect, useState } from "react";
-
-export default function Home() {
- 
-    useEffect(() => {
-      fetch('https://fakestoreapi.com/products')
-            .then(res=>res.json())
-            .then(json=>console.log(json))
-    }, []);
-
-    return (
-      <div className="home">
-        <h1>World Soccer MegaShop Plus</h1>
-        <div className="products">
-          <div className="product">Item 1</div>
-          <div className="product">Item 2</div>
-          <div className="product">Item 3</div>
-          <div className="product">Item 4</div>
-        </div>
-      </div>
-    );
-  }
+import React, { useEffect, useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../styles.css";
+import Table from "./table";
+export default function App() {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((res) => res.json())
+      .then((json) => setProducts(json));
+  }, []);
+  const columns = React.useMemo(
+    () => [
+      {
+        Header: "Product Image",
+        accessor: "image",
+        Cell: ({ value }) => {
+          return (
+            <img
+              alt="product"
+              class="img-fluid img-rounded"
+              width={200}
+              src={value}
+            />
+          );
+        }
+      },
+      {
+        Header: "Product Title",
+        accessor: "title" // accessor is the "key" in the data
+      },
+      {
+        Header: "Product Price",
+        accessor: "price"
+      },
+      {
+        Header: "Product Description",
+        accessor: "description"
+      }
+    ],
+    []
+  );
+  return (
+    <div className="App">
+      <h1>World Megastore Plus</h1>
+      <Table columns={columns} data={products} />
+    </div>
+  );
+}
