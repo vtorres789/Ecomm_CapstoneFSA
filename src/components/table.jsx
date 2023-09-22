@@ -159,7 +159,7 @@ export default function Table({ columns, data }) {
                   {column.canGroupBy ? (
                     // If the column can be grouped, let's add a toggle
                     <span {...column.getGroupByToggleProps()}>
-                      {column.isGrouped ? "🛑 " : "👊 "}
+                      {column.isGrouped ? "🛑 " : " ||| "}
                     </span>
                   ) : null}
                   {column.render("Header")}
