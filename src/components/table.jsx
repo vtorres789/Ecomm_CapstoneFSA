@@ -213,25 +213,25 @@ export default function Table({ columns, data }) {
           <div className="form-group input-group col-md-2">
             <ul className="pagination">
               <li
-                class={!canPreviousPage ? "page-item disabled" : "page-item "}
+                className={!canPreviousPage ? "page-item disabled" : "page-item "}
               >
                 <a className="page-link" onClick={() => gotoPage(0)}>
                   {"<<"}
                 </a>
               </li>
               <li
-                class={!canPreviousPage ? "page-item disabled" : "page-item "}
+                className={!canPreviousPage ? "page-item disabled" : "page-item "}
               >
                 <a className="page-link" onClick={() => previousPage()}>
                   {"<"}
                 </a>
               </li>
-              <li class={!canNextPage ? "page-item disabled" : "page-item "}>
+              <li className={!canNextPage ? "page-item disabled" : "page-item "}>
                 <a className="page-link" onClick={() => nextPage()}>
                   {">"}
                 </a>
               </li>
-              <li class={!canNextPage ? "page-item disabled" : "page-item "}>
+              <li className={!canNextPage ? "page-item disabled" : "page-item "}>
                 <a
                   className="page-link"
                   onClick={() => gotoPage(pageCount - 1)}
