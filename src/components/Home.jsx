@@ -52,7 +52,7 @@ export default function App() {
           return (
             <button
               onClick={() => {
-                //handleAddToCart(item);
+                // handleAddToCart(item);
                 console.log("Added to Cart!")
               }}
             >
