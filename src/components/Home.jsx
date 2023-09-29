@@ -14,7 +14,12 @@ export default function App() {
   }, []);
 
   const handleAddToCart = (item) => {
+  // Check if item is defined
+  if (item) {
     setCart([...cart, item]);
+  } else {
+    console.log("Added to Cart!");
+  }
   };
 
   const handleRemoveFromCart = (item) => {
@@ -52,8 +57,7 @@ export default function App() {
           return (
             <button
               onClick={() => {
-                // handleAddToCart(item);
-                console.log("Added to Cart!")
+                handleAddToCart(item);
               }}
             >
               Add to Cart
