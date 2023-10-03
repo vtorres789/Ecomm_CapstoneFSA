@@ -17,6 +17,7 @@ export default function App() {
   // Check if item is defined
   if (item) {
     setCart([...cart, item]);
+    console.log(item);
   } else {
     console.log("Added to Cart!");
   }
@@ -53,6 +54,7 @@ export default function App() {
       },
       {
         Header: "Add to Cart",
+        accessor: (row) => row,
         Cell: ({ value: item }) => {
           return (
             <button
